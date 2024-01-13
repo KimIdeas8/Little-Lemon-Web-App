@@ -1,15 +1,15 @@
-import Hero from "./Hero"
-import Highlights from "./Highlights"
-import Testimonials from "./Testimonials"
-import About from './About'
+import {Routes,Route} from 'react-router-dom';
+
+import BookingPage from './BookingPage.js';
+import HomePage from './HomePage.js'
 
 function Main(){
     return(
         <main>
-            <Hero></Hero>
-            <Highlights></Highlights>
-            <Testimonials></Testimonials>
-            <About></About>
+        <Routes>
+            <Route path='/' element={<HomePage></HomePage>} ></Route>
+            <Route path='/booking' element={<BookingPage></BookingPage>}></Route>
+        </Routes>
         </main>
     )
 }

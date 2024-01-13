@@ -1,10 +1,15 @@
-import Main from './Main.js';
-import Footer from './Footer.js';
+import Hero from "./Hero"
+import Highlights from "./Highlights"
+import Testimonials from "./Testimonials"
+import About from "./About"
+
 function HomePage(){
     return(
         <homepage>
-            <Main/>
-            <Footer/>
+            <Hero></Hero>
+            <Highlights></Highlights>
+            <Testimonials></Testimonials>
+            <About></About>
         </homepage>
     )
 }

@@ -1,11 +1,30 @@
+import React,{useState} from "react";
+
 import BookingForm from "./BookingForm"
-import Footer from "./Footer"
+
+function ListofGoals(props){
+    return(
+      <ul>
+        {props.allGoals.map((g)=>(
+          <li key={g.chosenDate}>
+            <span>Booking: {g.chosenDate},{g.chosenTime}, {g.numberOfGuests}, {g.occasion}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 
 function BookingPage(){
+    const [allGoals, updateAllGoals] = useState([]);
+
+    function addGoal(goal){
+      updateAllGoals([...allGoals,goal]);
+    }
+
     return(
     <booking-page>
-        <BookingForm></BookingForm>
-        <Footer></Footer>
+        <BookingForm onAdd={addGoal}></BookingForm>
+        <ListofGoals allGoals={allGoals}></ListofGoals>
     </booking-page>
     )
 }
