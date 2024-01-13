@@ -2,12 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { BrowerRouter, BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import FontStyles from './components/FontStyles.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <FontStyles/>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
