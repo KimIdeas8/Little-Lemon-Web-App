@@ -427,3 +427,6 @@ bookingform form{
   max-width: 200px;
   gap:20px;
 }
+bookingform .FieldError{
+  color: red;
+}

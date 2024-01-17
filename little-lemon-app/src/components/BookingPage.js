@@ -14,7 +14,7 @@ function ListofGoals(props){
     )
   }
 
-function BookingPage(){
+function BookingPage(props){
     const [allGoals, updateAllGoals] = useState([]);
 
     function addGoal(goal){
@@ -23,7 +23,7 @@ function BookingPage(){
 
     return(
     <booking-page>
-        <BookingForm onAdd={addGoal}></BookingForm>
+        <BookingForm availableTimes={props.availableTimes} dispatchFn={props.dispatchFn} onSubmitForm={props.onSubmitForm}></BookingForm>
         <ListofGoals allGoals={allGoals}></ListofGoals>
     </booking-page>
     )
