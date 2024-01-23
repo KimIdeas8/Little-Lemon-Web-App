@@ -2,8 +2,9 @@ import {useReducer} from "react";
 import {Routes,Route, useNavigate} from 'react-router-dom';
 
 import BookingPage from './BookingPage.js';
-import ConfirmedBooking from "./ConfirmedBooking.js";
+import ConfirmedBookingPage from "./ConfirmedBookingPage.js";
 import HomePage from './HomePage.js'
+import ErrorPage from "./ErrorPage.js";
 
 import { fetchAPI, submitAPI } from "./api.js";
 
@@ -14,7 +15,7 @@ function fetchData(date){
 //handles state change for 'availableTimes' state based on the date selected by the user
 const CHANGE_DATE = 'CHANGE_DATE';
 
-export function updateTimes(availableTimes,action){
+function updateTimes(availableTimes,action){
     switch(action.type){
         case CHANGE_DATE:
             const selected_date = new Date(action.payload);
@@ -25,7 +26,7 @@ export function updateTimes(availableTimes,action){
 }
 
 //creates initial state for the state variable 'availableTimes':
-export function initializeTimes() {
+function initializeTimes() {
     const today = new Date(); // Date Object: today's date and time
     return fetchData(today); // return availableTimes array from API
 }
@@ -37,6 +38,7 @@ function Main(){
     //if BookingForm is submitted, navigate to the booking confirmed page:
     function submitForm(formData){
         if (submitAPI(formData)){
+            window.scrollTo(0, 0); // Scroll to the top of the page
             navigate('/confirmedbooking');
         }
     }
@@ -53,13 +55,15 @@ function Main(){
 
     return(
         <main>
-        <Routes>
-            <Route path='/' element={<HomePage/>} ></Route>
-            <Route path='/booking' element={<BookingPage availableTimes={availableTimes} dispatchFn={dispatch} onSubmitForm={submitForm} onDateChange={fetchData}/>}></Route>
-            <Route path='/confirmedbooking' element={<ConfirmedBooking/>}></Route>
-        </Routes>
+            <Routes>
+                <Route path='/' element={<HomePage/>} ></Route>
+                <Route path='/booking' element={<BookingPage availableTimes={availableTimes} dispatchFn={dispatch} onSubmitForm={submitForm} onDateChange={fetchData}/>}></Route>
+                <Route path='/confirmedbooking' element={<ConfirmedBookingPage/>}></Route>
+                <Route path='/notfound' element={<ErrorPage/>}></Route>
+            </Routes>
         </main>
     )
 }
 
 export default Main
+export{updateTimes,initializeTimes};

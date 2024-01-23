@@ -1,18 +1,14 @@
-import {Link as RouterLink} from 'react-router-dom';
-import {HashLink as RouterHashLink } from 'react-router-hash-link';
+import NavHorizontal from "./NavHorizontal"
+import NavVertical from "./NavVertical"
 
-function Nav(){
+function Nav(props){
+
+
     return(
-        <nav>
-            <ul>
-                <RouterLink className='nav-item' to="/">Home</RouterLink>
-                <RouterHashLink className='nav-item' to="/#About-Section" smooth duration={500}>About</RouterHashLink>
-                <RouterLink className='nav-item' to="/">Menu</RouterLink>
-                <RouterLink className='nav-item' to="/booking" data-testid="reservations-link">Reservations</RouterLink>
-                <RouterLink className='nav-item' to="/">Order Online</RouterLink>
-                <RouterLink className='nav-item' to="/">Login</RouterLink>
-            </ul>
-        </nav>
+        <>
+            <NavHorizontal isMenuOpen={props.isMenuOpen} toggleMenu={props.toggleMenu}></NavHorizontal>
+            <NavVertical isMenuOpen={props.isMenuOpen} toggleMenu={props.toggleMenu}></NavVertical>
+        </>
     )
 }
 

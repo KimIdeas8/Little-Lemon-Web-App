@@ -5,12 +5,12 @@ import About from "./About"
 
 function HomePage(){
     return(
-        <homepage>
+        <>
             <Hero></Hero>
             <Highlights></Highlights>
             <Testimonials></Testimonials>
             <About></About>
-        </homepage>
+        </>
     )
 }
 

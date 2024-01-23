@@ -1,0 +1,419 @@
+header{
+  height: 76px;
+}
+
+header>img{
+  width:202px;
+  padding-top: 10.425px;
+  padding-bottom: 10.425px;
+}
+
+footer {
+  background-color:#f4ce14;
+  height: 350px;
+  padding-top: 67px;
+  display: inline-flex;
+  width:100vw;
+  justify-content: center;
+}
+
+.footer-text{
+  width: 210.68px;
+}
+footer>div>ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+footer h6{
+  margin-top:0px;
+  margin-bottom: 20px;
+  height: 46px;
+
+  font-family: 'Markazi Text', serif;
+  font-size: 20pt;
+  font-weight: 500;
+
+  color:#495E57;
+}
+
+footer ul {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  font-weight: 500;
+}
+
+footer a{
+  color: white;
+  text-decoration: none;
+}
+#doormat-nav{
+  margin-left: 69px;
+}
+
+footer>div>img{
+  height: 279px;
+  padding-left: 1.84px;
+  padding-right: 1.84px;
+}
+
+nav-bar {
+  margin-top: 21px;
+  padding-bottom: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+nav{
+  width: fit-content;
+}
+nav ul{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top:25px;
+  padding-left: 17px;
+}
+nav .nav-item{
+  display: inline-block;
+  padding-left: 28px;
+
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: 500;
+}
+
+nav>ul>li {
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: 500;
+}
+
+nav a{
+  color:black;
+  text-decoration: none;
+}
+hero{
+  display: flex;
+  justify-content: center;
+  background-color: #495E57;
+  height: 439.4px;
+}
+
+.hero-text{
+  width: 422px;
+  padding-right: 38px;
+}
+hero h1{
+  font-family: 'Markazi Text', serif;
+  font-weight: 500;
+  font-size: 64pt;
+  color: #f4ce14;
+
+  width:fit-content;
+  margin-top: 47px;
+  margin-bottom: 0;
+}
+
+hero h2{
+  font-family: 'Markazi Text', serif;
+  font-weight: 400;
+  font-size: 40pt;
+  color: white;
+
+  width: 244.49px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+hero p{
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+  font-size: 16pt;
+  line-height: 1.5;
+  color: white;
+
+  max-width: 65ch;
+  overflow-wrap: break-word;
+  margin-top: 0;
+  margin-bottom:40px;
+}
+
+.hero-img{
+  margin-top: 47px;
+  width:375px;
+  height: 475px;
+
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+hero img{
+  width: 375px;
+  height:auto;
+
+}
+
+
+.highlights-header-outer{
+  display:flex;
+  justify-content: center;
+}
+.highlights-header{
+  width: 858px;
+
+  margin-top:100px;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+highlights h1{
+  font-family: 'Karla', sans-serif;
+  font-weight: 800;
+  font-size: 20pt;
+
+  margin: 0;
+}
+.highlights-body-outer{
+  margin-bottom: 73px;
+
+  display: flex;
+  justify-content: center;
+}
+.highlights-body{
+  width: 858px;
+
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+highlights card{
+  max-width: 264.47px;
+  background-color: #EDEFEE;
+  border-radius: 50px 50px 0 0;
+
+  justify-content: center;
+}
+
+highlights card .card-img{
+  max-width:264.47px;
+  max-height: 185.26px;
+
+  overflow: hidden;
+  border-radius: 50px 50px 0 0;
+}
+
+highlights card img{
+  width:280px;
+}
+
+highlights .card-text-container{
+  height:440px;
+  display: flex;
+  justify-content: center;
+}
+
+highlights .card-text{
+  max-width: 216.74px;
+  align-items: stretch;
+}
+highlights card-title{
+  margin-top: 21px;
+  margin-bottom: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+highlights card-title heading{
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  font-weight: 700;
+}
+highlights card-title price{
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  font-weight: 500;
+  color:#EE9972;
+}
+highlights card p{
+  max-width: 65ch;
+  height: 288px;
+
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  font-weight: 400;
+  line-height:1.5;
+  color: #495E57;
+}
+highlights .order-btn{
+  margin-bottom: 20px;
+}
+highlights .order-btn a{
+  text-decoration: none;
+  color: black;
+}
+highlights .order-btn a text{
+  padding-right: 12px;
+  width:fit-content;
+
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: 500;
+}
+
+testimonials heading{
+  background-color:#fbdabb;
+  padding-top: 125px;
+  padding-bottom: 66.49px;
+
+  font-family: 'Karla', sans-serif;
+  font-size: 20pt;
+  font-weight: 800;
+
+  display: flex;
+  justify-content: center;
+}
+
+testimonials body{
+  background-color:#fbdabb;
+
+  padding-bottom: 180px;
+
+  display: flex;
+  justify-content: center;
+}
+testimonials body .cards{
+  width:860px;
+  display: flex;
+  justify-content: space-between;
+}
+testimonials .card{
+  width: 200px;
+  height: 175px;
+  border: 0;
+  border-radius: 0;
+
+  background-color: #EDEFEE;
+
+  display: flex;
+  align-items: center;
+}
+testimonials .card .rating{
+  padding-top: 20px;
+  width: 175px;
+}
+testimonials .card .rating>text{
+  padding-right: 10px;
+
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+testimonials .card .rating>img{
+  padding-right: 5px;
+}
+testimonials .card-profile{
+  padding-top: 13px;
+
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  width: 175px;
+}
+testimonials .card-profile>img{
+  padding-right: 15px;
+
+  height: 46px;
+}
+
+testimonials .card-text p{
+  margin-top: 19px;
+  margin-bottom: 0;
+
+  width:175px;
+  height:46px;
+
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+about{
+  margin-top:87px;
+  margin-bottom:22px;
+  display: flex;
+  justify-content: center;
+}
+about about-text{
+  margin-right: 49px;
+  width: 373px;
+}
+about heading{
+  font-family: 'Markazi Text', serif;
+  font-weight: 500;
+  font-size: 64px;
+
+  display: block;
+}
+
+about subheading{
+  font-family: 'Markazi Text', serif;
+  font-weight: 400;
+  font-size: 40px;
+
+  display: block;
+}
+
+about para{
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+  font-size: 16pt;
+
+  max-width: 65ch;
+}
+about-pics{
+  display: flex;
+}
+about .img1{
+  margin-top:107px;
+  border-radius: 50px;
+  width: 276px;
+  height: fit-content;
+
+  overflow: hidden;
+}
+about #img1{
+  margin-left: -120px;
+  height:338px;
+}
+about .img2{
+  margin-left: -96px;
+  border-radius: 50px;
+  width:272px;
+  height: fit-content;
+
+  overflow: hidden;
+}
+about #img2{
+  margin-left: -210px;
+  height: 338px;
+}
+
+.bookingform-container{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.bookingform{
+  display: grid;
+  max-width: 200px;
+  gap: 20px;
+  color:#495E57;
+  padding-bottom: 25px;
+}
+.bookingform .FieldError{
+  color: red;
+}

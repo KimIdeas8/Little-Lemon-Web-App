@@ -9,15 +9,17 @@ const CustomButton = () => {
       backgroundColor: '#fece14', // Replace with your desired background color
       color: 'black', // Replace with your desired text color
       border: 0,
-      width: 'auto',
-      height: '50px'
+      width: 'fit-content',
+      minHeight: '50px',
+      display: 'flex',
+      justifyContent:'center'
     };
 
     return (
       <Button variant="primary" style={customButtonStyle}><b>Online Menu</b></Button>
     );
   };
- 
+
 function DeliveryIcon(){
     return(
         <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,46 +30,39 @@ function DeliveryIcon(){
     )
 }
 
-function Card(props){
+export function Card(props){
     return(
-    <card>
-        <div className='card-img'>
-        <img src={process.env.PUBLIC_URL + props.link } alt=""></img>
-        </div>
-        <div className='card-text-container'>
-        <div className='card-text'>
-            <card-title>
-                <heading>{props.cardtitle}</heading>
-                <price>{props.price}</price>
-            </card-title>
-            <card-body>
-                <p>{props.describe} </p>
-                <div className='order-btn'>
-                <a href="#"><text>Order a delivery</text><DeliveryIcon></DeliveryIcon></a>
+        <article className={props.className}>
+            <div className='card-img'>
+                <img src={process.env.PUBLIC_URL + props.link } alt=""></img>
+            </div>
+            <div className='card-body'>
+                <div className='card-title'>
+                    <h5>{props.cardtitle}</h5>
+                    <div>{props.price}</div>
                 </div>
-            </card-body>
-        </div>
-        </div>
-    </card>
+                <p>{props.describe} </p>
+                <div className='card-btn'>
+                    <a href="#"><b>Order a delivery</b><DeliveryIcon/></a>
+                </div>
+            </div>
+        </article>
     )
 }
+
 function Highlights(){
     return(
-        <highlights>
-            <div className='highlights-header-outer'>
-            <div className='highlights-header'>
-                <h1>THIS WEEK'S SPECIALS!</h1>
-                <CustomButton></CustomButton>
+        <section className='highlights'>
+            <div className='title'>
+                <h3>THIS WEEK'S SPECIALS</h3>
+                <div className='button'><CustomButton></CustomButton></div>
             </div>
+            <div className='body'>
+                <Card className='cards one' link="/images/greek salad.jpg"cardtitle="Greek Salad" price="$12.99" describe="The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."></Card>
+                <Card className='cards two' link="/images/bruchetta.svg" cardtitle="Bruschetta" price="$5.99" describe="Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil."></Card>
+                <Card className='cards three'link="/images/lemon dessert.jpg" cardtitle="Lemon Dessert" price="$5.99" describe="This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined."></Card>
             </div>
-            <div className='highlights-body-outer'>
-            <div className='highlights-body'>
-                <Card link="/images/greek salad.jpg"cardtitle="Greek Salad" price="$12.99" describe="The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."></Card>
-                <Card link="/images/bruchetta.svg" cardtitle="Bruschetta" price="$5.99" describe="Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil."></Card>
-                <Card link="/images/lemon dessert.jpg" cardtitle="Lemon Dessert" price="$5.99" describe="This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined."></Card>
-            </div>
-            </div>
-        </highlights>
+        </section>
     )
 }
 

@@ -4,17 +4,17 @@ const CHANGE_DATE = 'CHANGE_DATE';
 
 const DateErrorMessage = () => {
     return (
-        <p className='FieldError'>Please select a valid date.</p>
+        <p className='bookingFieldError'>Please select a valid date.</p>
     )
 }
 const GuestsErrorMessage = () => {
     return(
-        <p className='FieldError'>Enter a value between 1 and 10.</p>
+        <p className='bookingFieldError'>Enter a value between 1 and 10.</p>
     )
 }
 const TimeErrorMessage = () => {
     return(
-        <p className='FieldError'>Please select an available date and timeslot.</p>
+        <p className='bookingFieldError'>Please select an available date and timeslot.</p>
     )
 }
 
@@ -22,6 +22,8 @@ function BookingForm(props){
 
     //state variables for form fields:
     const [formData, setFormData] = useState({chosenDate:"", chosenTime:props.availableTimes[0], numberOfGuests:1, occasion: "No Occasion"});
+    const [isDateFieldTouched, setIsDateFieldTouched] = useState(false);
+    const [isTimeFieldTouched, setIsTimeFieldTouched] = useState(false);
 
     function changeHandler(e){
         setFormData({...formData, [e.target.name]:e.target.value});
@@ -60,44 +62,58 @@ function BookingForm(props){
         )
     }
 
-    return(
-        <bookingform>
-            <form onSubmit={submitHandler}>
-                <h1>Book A Table</h1>
+    function todayDate () {
+        const today=new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const day = String(today.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
 
-                <label htmlFor="res-date">Choose date</label>
-                <input type="date" id="res-date" name='chosenDate' required value={formData.chosenDate} onChange={changeHandler}/>
-                {!isDateValid()? (
+    function handleDateBlur(){
+        setIsDateFieldTouched(true);
+    }
+
+    function handleTimeBlur(){
+        setIsTimeFieldTouched(true);
+    }
+
+    return(
+        <>
+            <form className="bookingForm" onSubmit={submitHandler}>
+                <label className="bookingForm-labels" htmlFor="res-date">Choose date</label>
+                <input className="bookingForm-input" type="date" id="res-date" name='chosenDate' required value={formData.chosenDate} min={todayDate()} onChange={changeHandler} onBlur={handleDateBlur}/>
+                {isDateFieldTouched && !isDateValid()? (
                     <DateErrorMessage/>
                 ):null}
 
-                <label htmlFor="res-time">Choose time</label>
-                <select id="res-time" name='chosenTime' required value={formData.chosenTime} onChange={changeHandler}>
+                <label className="bookingForm-labels"  htmlFor="res-time">Choose time</label>
+                <select className="bookingForm-input" id="res-time" name='chosenTime' required value={formData.chosenTime} onChange={changeHandler} onBlur={handleTimeBlur}>
                     {props.availableTimes.map((time)=>(
                         <option key={time} value={time}>{time}</option>
                     ))}
                 </select>
-                {formData.chosenTime === "===Select an available timeslot==="?(
+                {isTimeFieldTouched && formData.chosenTime === "===Select an available timeslot==="?(
                     <TimeErrorMessage/>
                 ):null}
 
-                <label htmlFor="guests">Number of guests</label>
-                <input type="number" min="1" max='10' id='guests' name='numberOfGuests' required value={formData.numberOfGuests} onChange={changeHandler}/>
+                <label className="bookingForm-labels" htmlFor="guests">Number of guests</label>
+                <input className="bookingForm-input" type="number" min="1" max='10' id='guests' name='numberOfGuests' required value={formData.numberOfGuests} onChange={changeHandler}/>
                 {formData.numberOfGuests>10|formData.numberOfGuests<1? (
                     <GuestsErrorMessage/>
                 ):null}
 
-                <label htmlFor="occasion">Ocassion</label>
-                <select id="occasion" name='occasion' required value={formData.occasion} onChange={changeHandler}>
+                <label className="bookingForm-labels"  htmlFor="occasion">Ocassion</label>
+                <select className="bookingForm-input" id="occasion" name='occasion' required value={formData.occasion} onChange={changeHandler}>
                     <option value="No Occasion">No Occasion</option>
                     <option value="Birthday">Birthday</option>
                     <option value="Anniversary">Anniversary</option>
                 </select>
 
-                <input type="submit" disabled={!getIsFormValid()} value="Make your reservation"/>
+                <input className="bookingForm-button" type="submit" disabled={!getIsFormValid()} value="Confirm"/>
 
             </form>
-        </bookingform>
+        </>
     )
 }
 

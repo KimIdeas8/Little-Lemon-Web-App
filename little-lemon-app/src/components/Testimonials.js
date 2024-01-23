@@ -1,39 +1,44 @@
 
+
 function Card(props){
     return(
-    <card className='card'>
-        <div className='rating'>
-            <text>Rating:</text>
-            <img src="/images/star-full.svg" alt=""></img>
-            <img src="/images/star-full.svg" alt=""></img>
-            <img src="/images/star-full.svg" alt=""></img>
-            <img src="/images/star-full.svg" alt=""></img>
-            <img src="/images/star-full.svg" alt=""></img>
-        </div>
+    <article className={props.className}>
         <div className='card-profile'>
             <img src={process.env.PUBLIC_URL + '/images/person-circle.svg'} alt=""></img>
-            <text>{props.name}</text>
+            <b>{props.name}</b>
         </div>
-        <div className='card-text'>
-            <p>{props.review}</p>
+        <div className='rating'>
+            <img src="/images/yellow-star-full.svg" alt=""></img>
+            <img src="/images/yellow-star-full.svg" alt=""></img>
+            <img src="/images/yellow-star-full.svg" alt=""></img>
+            <img src="/images/yellow-star-full.svg" alt=""></img>
+            <img src="/images/yellow-star-full.svg" alt=""></img>
         </div>
-    </card>
+        <p className='card-text'>{props.review}</p>
+    </article>
     )
 }
 
+
+/*
+                <Card className="cards one" name="Jesicah Waturi" review="I had an enjoyable lunch with my grandma."></Card>
+                <Card className="cards two" name="Alec Browne" review="Great variety of cakes and desserts, French drinks."></Card>
+                <Card className="cards three" name="Jorge Delau" review="The dessert was mouth-watering."></Card>
+                <Card className="cards four" name="JC Loaiza" review="This has become my favourite restaurant."></Card>
+*/
 function Testimonials(){
     return(
-        <testimonials>
-            <heading>Testimonials</heading>
-            <body>
-                <div className="cards">
-                <Card name="Jesicah Waturi" review="I had an enjoyable lunch with my grandma."></Card>
-                <Card name="Alec Browne" review="Great variety of cakes and desserts, French drinks."></Card>
-                <Card name="Jorge Delau" review="The dessert was mouth-watering."></Card>
-                <Card name="JC Loaiza" review="This has become my favourite restaurant."></Card>
-                </div>
-            </body>
-        </testimonials>
+        <section className="testimonials">
+            <div className="title">
+                <h3>Testimonials</h3>
+            </div>
+            <div className="body">
+                <Card className="cards one" name="Jesicah Waturi" review="I had an enjoyable lunch with my grandma."></Card>
+                <Card className="cards two" name="Alec Browne" review="Great variety of cakes and desserts, French drinks."></Card>
+                <Card className="cards three" name="Jorge Delau" review="The dessert was mouth-watering."></Card>
+                <Card className="cards four" name="JC Loaiza" review="This has become my favourite restaurant."></Card>
+            </div>
+        </section>
     )
 }
 
