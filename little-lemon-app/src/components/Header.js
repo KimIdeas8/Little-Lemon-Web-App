@@ -6,7 +6,7 @@ const scrollToTop = () => {
 function Header(){
     return(
         <header>
-            <Link className='nav-item' to="/" onClick={scrollToTop}><img src={process.env.PUBLIC_URL + '/images/Logo.svg'} alt=""/></Link>
+            <Link className='nav-item' to="/" onClick={scrollToTop}><img src={process.env.PUBLIC_URL + '/images/Logo.svg'} alt="logo"/></Link>
         </header>
     )
 }

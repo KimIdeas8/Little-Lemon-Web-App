@@ -16,7 +16,7 @@ function App() {
     <>
       <Header />
       <Nav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
-      <Main/>
+      <Main />
       <Footer isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
     </>
   );
